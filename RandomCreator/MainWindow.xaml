@@ -1,0 +1,35 @@
+﻿<Window x:Class="RandomCreator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RandomCreator"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Random Creator" Height="500" Width="900">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="8*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="2">
+            <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Minimum"/>
+            <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Maximum"/>
+            <Separator/>
+            <CheckBox Content="Repeat"/>
+            <Separator/>
+            <Button Content="Import mapping list..." Style="{StaticResource MaterialDesignOutlinedButton}"/>
+            <ListBox MaxHeight="200"/>
+        </StackPanel>
+        <Canvas Grid.Column="1">
+            <TextBox Canvas.Top="220" Canvas.Left="120" Width="100" Style="{StaticResource MaterialDesignOutlinedTextBox}" materialDesign:HintAssist.Hint="Number" Height="50" IsEnabled="False"/>
+            <Button Content="ROLL" Canvas.Top="280" Canvas.Left="230"/>
+            <TextBox Canvas.Top="220" Canvas.Left="300"  Width="100" Style="{StaticResource MaterialDesignOutlinedTextBox}" materialDesign:HintAssist.Hint="Mapping" Height="50" IsEnabled="False"/>
+        </Canvas>
+        <StackPanel Grid.Column="0">
+            <ListBox MaxHeight="800"/>
+            <Button Content="Clear" Style="{StaticResource MaterialDesignOutlinedButton}"/>
+        </StackPanel>
+    </Grid>
+</Window>
